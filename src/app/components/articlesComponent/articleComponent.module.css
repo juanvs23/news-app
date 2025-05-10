@@ -1,0 +1,12 @@
+.btnnotice{
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--contrast-color);
+    padding:10px 30px;
+    border-radius:30px;
+}
+.btnnotice:hover{
+    background-color: color-mix(in srgb, var(--accent-color), transparent 15%);
+    border-color: color-mix(in srgb, var(--accent-color), transparent 15%);
+   color: var(--contrast-color);
+}

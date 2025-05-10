@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../mis documentos/empresas/addic/leefitz/Blogy"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Blogy",
+		"liveServer.settings.port": 5578
+	}
+}

@@ -15,7 +15,7 @@
 /* Fonts */
 :root {
   --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: Marcellus, Marcellus Fallback, serif;
+  --heading-font: "Nunito",  sans-serif;
   --nav-font: "Poppins",  sans-serif;
 }
 
@@ -24,20 +24,19 @@
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #212529; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #2d465e; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #1c6bfa; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #f75815; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
-  --contrast-color-2: #FA3C1B; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
   --nav-color: #000000;  /* The default color of the main navmenu links */
-  --nav-hover-color: #1c6bfa; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-hover-color: #f75815; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #1c6bfa; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-hover-color: #f75815; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -93,24 +92,31 @@ h6 {
 /* PHP Email Form Messages
 ------------------------------*/
 .php-email-form .error-message {
-  color: #df1529;
+  display: none;
+  background: #df1529;
+  color: #ffffff;
   text-align: left;
-  min-width:100%;
-  padding-top:5px;
+  padding: 15px;
+  margin-bottom: 24px;
   font-weight: 600;
-  padding-left:50px;
 }
 
 .php-email-form .sent-message {
-  color: var(--accent-color);
-  text-align: left;
+  display: none;
+  color: #ffffff;
+  background: #059652;
+  text-align: center;
+  padding: 15px;
   margin-bottom: 24px;
   font-weight: 600;
 }
 
 .php-email-form .loading {
-
-  text-align: left;
+  display: none;
+  background: var(--surface-color);
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
 }
 
 .php-email-form .loading:before {
@@ -221,7 +227,6 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
   padding: 20px 0;
-  padding-bottom:0;
 }
 
 .header .top-row {
@@ -238,13 +243,11 @@ h6 {
 }
 
 .header .top-row .logo .sitename {
+  font-size: 32px;
+  font-weight: 400;
   color: var(--heading-color);
-    font-size: 32px;
-    font-weight: 400;
-    font-family: var(--heading-font);
-    margin: 0;
-    letter-spacing: -2px;
-    font-style: italic;
+  font-family: var(--heading-font);
+  margin: 0;
 }
 
 .header .top-row .logo span {
@@ -608,12 +611,10 @@ h6 {
 
 .footer .footer-about .logo span {
   color: var(--heading-color);
-  font-size: 32px;
-  font-weight: 400;
   font-family: var(--heading-font);
-  margin: 0;
-  letter-spacing: -2px;
-  font-style: italic;
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: 1px;
 }
 
 .footer .footer-about p {
@@ -784,13 +785,8 @@ h6 {
 --------------------------------------------------------------*/
 .page-title {
   text-align: center;
-  padding: 60px 15px;
-  margin-bottom:60px;
-  color:#fff;
-  margin-top: 20px;
-  border-radius: 20px;
+  padding: 20px 0;
 }
-
 
 .page-title .breadcrumbs {
   margin-bottom: 1.5rem;
@@ -809,17 +805,17 @@ h6 {
 }
 
 .page-title .breadcrumbs .breadcrumb .breadcrumb-item.active {
-  color: var(--contrast-color-2);
+  color: var(--accent-color);
 }
 
 .page-title .breadcrumbs .breadcrumb .breadcrumb-item a {
-  color: white;
+  color: inherit;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .page-title .breadcrumbs .breadcrumb .breadcrumb-item a:hover {
-  color: var(--contrast-color-2);
+  color: var(--accent-color);
 }
 
 .page-title .breadcrumbs .breadcrumb .breadcrumb-item a i {
@@ -828,7 +824,7 @@ h6 {
 }
 
 .page-title .breadcrumbs .breadcrumb .breadcrumb-item+.breadcrumb-item::before {
-  color: color-mix(in srgb, white, transparent 50%);
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
 }
 
 .page-title .title-wrapper {
@@ -841,25 +837,12 @@ h6 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   font-weight: 700;
-  color: white;
+  color: var(--heading-color);
 }
-.news-app{
-  font-family: var(--heading-font);
-  font-style: italic;
-}
-.section-title .description-title{
-  font-family:var(--nav-font);
-}
-.blog-post-item:hover img {
-  transform: rotate(15deg) scale(1.5);
-}
-.blog-post-item img {
-  transition: transform 0.3s ease-in-out;
-  transform: rotate(0deg) scale(1);
-}
+
 .page-title .title-wrapper p {
   font-size: 1.1rem;
-  color: color-mix(in srgb, white, transparent 20%);
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
   margin: 0;
   line-height: 1.6;
 }
@@ -1631,6 +1614,7 @@ section,
 .latest-posts article {
   background-color: var(--surface-color);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 30px;
   height: 100%;
   border-radius: 10px;
   overflow: hidden;
@@ -1820,7 +1804,7 @@ section,
 # Pagination 2 Section
 --------------------------------------------------------------*/
 .pagination-2 {
-  padding-top: 30px;
+  padding-top: 0;
   color: color-mix(in srgb, var(--default-color), transparent 40%);
 }
 
@@ -1836,7 +1820,7 @@ section,
   transition: 0.3s;
 }
 
-.pagination-2 li a,.pagination-2 li span {
+.pagination-2 li a {
   color: var(--accent-color);
   display: flex;
   align-items: center;
@@ -1846,7 +1830,7 @@ section,
   border-radius: 50%;
   border: 1px solid var(--accent-color);
 }
-.pagination-2 li span.active,
+
 .pagination-2 li a.active,
 .pagination-2 li a:hover {
   background: var(--accent-color);
